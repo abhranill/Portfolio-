@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
 import {
   ArrowUpRight,
   Mail,
@@ -12,19 +13,88 @@ import {
   BrainCircuit,
   Rocket,
   Lightbulb,
+  Terminal,
+  Globe,
+  Database,
+  Cpu,
+  Wrench,
+  Layers,
 } from "lucide-react";
+
+const skillCategories = [
+  {
+    title: "Programming",
+    subtitle: "Languages",
+    icon: Terminal,
+    skills: ["C", "C++", "Python", "JavaScript", "TypeScript"],
+  },
+  {
+    title: "Frontend",
+    subtitle: "User Interfaces",
+    icon: Globe,
+    skills: ["HTML5", "CSS3", "React", "Next.js", "Tailwind CSS"],
+  },
+  {
+    title: "Backend",
+    subtitle: "Server & APIs",
+    icon: Database,
+    skills: ["Node.js", "Express.js", "FastAPI", "REST APIs"],
+  },
+  {
+    title: "AI & Machine Learning",
+    subtitle: "Intelligent Systems",
+    icon: BrainCircuit,
+    skills: ["Python", "PyTorch", "LLMs", "Gemini API"],
+  },
+  {
+    title: "Databases",
+    subtitle: "Data Management",
+    icon: Layers,
+    skills: ["MongoDB", "SQL", "Supabase"],
+  },
+  {
+    title: "Developer Tools",
+    subtitle: "Development Workflow",
+    icon: Wrench,
+    skills: ["Git", "GitHub", "VS Code", "Postman"],
+  },
+  {
+    title: "Core Concepts",
+    subtitle: "Computer Science",
+    icon: Cpu,
+    skills: [
+      "Data Structures",
+      "Algorithms",
+      "OOP",
+      "Problem Solving",
+    ],
+  },
+  {
+    title: "Deployment",
+    subtitle: "Build & Ship",
+    icon: Code2,
+    skills: ["Vercel", "Git", "Linux", "REST Integration"],
+  },
+];
+
+const expertise = [
+  "Full Stack Development",
+  "AI / Machine Learning",
+  "Problem Solving",
+  "Creative Engineering",
+];
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#090B09] text-white overflow-hidden">
 
-      {/* Background Effects */}
+      {/* BACKGROUND EFFECTS */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-200px] right-[-100px] w-[500px] h-[500px] bg-[#B7FF42]/10 blur-[150px] rounded-full" />
         <div className="absolute bottom-[-200px] left-[-100px] w-[400px] h-[400px] bg-[#B7FF42]/5 blur-[150px] rounded-full" />
       </div>
 
-      {/* Navbar */}
+      {/* NAVBAR */}
       <nav className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 py-7 flex items-center justify-between border-b border-white/10">
 
         <Link href="/" className="text-2xl font-black tracking-tighter">
@@ -46,10 +116,10 @@ export default function Home() {
         </a>
       </nav>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section className="relative z-10 max-w-7xl mx-auto min-h-[85vh] px-6 md:px-12 grid md:grid-cols-2 items-center gap-10 py-16">
 
-        {/* Left Content */}
+        {/* HERO CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -35 }}
           animate={{ opacity: 1, x: 0 }}
@@ -84,7 +154,7 @@ export default function Home() {
             and artificial intelligence.
           </p>
 
-          {/* Buttons */}
+          {/* HERO BUTTONS */}
           <div className="flex flex-wrap gap-4 mt-9">
 
             <motion.a
@@ -111,7 +181,7 @@ export default function Home() {
 
           </div>
 
-          {/* Social Links */}
+          {/* SOCIAL LINKS */}
           <div className="flex items-center gap-6 mt-12">
 
             <a
@@ -145,7 +215,7 @@ export default function Home() {
           </div>
         </motion.div>
 
-        {/* Right Profile Image */}
+        {/* PROFILE IMAGE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -153,10 +223,8 @@ export default function Home() {
           className="relative order-1 md:order-2 flex justify-center items-center"
         >
 
-          {/* Green Ambient Glow */}
           <div className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full bg-[#B7FF42]/10 blur-[110px]" />
 
-          {/* Profile Image */}
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{
@@ -179,195 +247,306 @@ export default function Home() {
         </motion.div>
       </section>
 
-{/* ABOUT SECTION */}
-<section
-  id="about"
-  className="relative z-10 py-28 px-6 md:px-12 border-t border-white/10"
->
-  <div className="max-w-7xl mx-auto">
-
-    {/* Section Heading */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-      className="mb-16"
-    >
-      <p className="text-[#B7FF42] text-sm tracking-[0.3em] font-semibold mb-4">
-        GET TO KNOW ME
-      </p>
-
-      <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-        Beyond the <span className="text-[#B7FF42]">Code.</span>
-      </h2>
-
-      <p className="text-gray-400 mt-5 max-w-xl leading-8">
-        A little about who I am, what I do, and what drives me
-        to keep building.
-      </p>
-    </motion.div>
-
-    {/* About Grid */}
-    <div className="grid lg:grid-cols-5 gap-6">
-
-      {/* Main About Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="lg:col-span-3 rounded-3xl border border-white/10 bg-[#111511] p-8 md:p-10 hover:border-[#B7FF42]/30 transition duration-500"
+      {/* ABOUT SECTION */}
+      <section
+        id="about"
+        className="relative z-10 py-28 px-6 md:px-12 border-t border-white/10"
       >
-        <div className="flex items-center gap-3 mb-8">
-          <div className="p-3 rounded-xl bg-[#B7FF42]/10 text-[#B7FF42]">
-            <Code2 size={25} />
-          </div>
-          <span className="text-gray-400 text-sm tracking-widest">
-            MY INTRODUCTION
-          </span>
-        </div>
+        <div className="max-w-7xl mx-auto">
 
-        <h3 className="text-2xl md:text-3xl font-bold leading-snug mb-6">
-          Curious mind. Creative thinker.
-          <span className="text-[#B7FF42]"> Developer by passion.</span>
-        </h3>
+          {/* HEADING */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-16"
+          >
+            <p className="text-[#B7FF42] text-sm tracking-[0.3em] font-semibold mb-4">
+              GET TO KNOW ME
+            </p>
 
-        <p className="text-gray-400 leading-8 mb-5">
-          I'm Abhranil Roy, a Computer Science and Engineering
-          student passionate about technology, software development,
-          and artificial intelligence.
-        </p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+              Beyond the <span className="text-[#B7FF42]">Code.</span>
+            </h2>
 
-        <p className="text-gray-400 leading-8 mb-5">
-          My journey revolves around turning ideas into functional
-          digital products. From building full-stack web applications
-          to experimenting with language models, I enjoy exploring
-          how technology can solve real-world problems.
-        </p>
+            <p className="text-gray-400 mt-5 max-w-xl leading-8">
+              A little about who I am, what I do, and what drives me
+              to keep building.
+            </p>
+          </motion.div>
 
-        <p className="text-gray-400 leading-8">
-          I believe in learning by building, experimenting with
-          new technologies, and continuously improving my craft.
-          Every project is an opportunity to learn something new.
-        </p>
+          {/* ABOUT GRID */}
+          <div className="grid lg:grid-cols-5 gap-6">
 
-        <div className="flex flex-wrap gap-3 mt-9">
-          {["Problem Solver", "Tech Enthusiast", "Lifelong Learner"].map(
-            (item) => (
-              <span
-                key={item}
-                className="px-4 py-2 rounded-full border border-[#B7FF42]/20 bg-[#B7FF42]/5 text-[#B7FF42] text-xs"
+            {/* INTRODUCTION */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-3 rounded-3xl border border-white/10 bg-[#111511] p-8 md:p-10 hover:border-[#B7FF42]/30 transition duration-500"
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <div className="p-3 rounded-xl bg-[#B7FF42]/10 text-[#B7FF42]">
+                  <Code2 size={25} />
+                </div>
+                <span className="text-gray-400 text-sm tracking-widest">
+                  MY INTRODUCTION
+                </span>
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-bold leading-snug mb-6">
+                Curious mind. Creative thinker.
+                <span className="text-[#B7FF42]"> Developer by passion.</span>
+              </h3>
+
+              <p className="text-gray-400 leading-8 mb-5">
+                I'm Abhranil Roy, a Computer Science and Engineering
+                student passionate about technology, software development,
+                and artificial intelligence.
+              </p>
+
+              <p className="text-gray-400 leading-8 mb-5">
+                My journey revolves around turning ideas into functional
+                digital products. From building full-stack web applications
+                to experimenting with language models, I enjoy exploring
+                how technology can solve real-world problems.
+              </p>
+
+              <p className="text-gray-400 leading-8">
+                I believe in learning by building, experimenting with
+                new technologies, and continuously improving my craft.
+                Every project is an opportunity to learn something new.
+              </p>
+
+              <div className="flex flex-wrap gap-3 mt-9">
+                {["Problem Solver", "Tech Enthusiast", "Lifelong Learner"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="px-4 py-2 rounded-full border border-[#B7FF42]/20 bg-[#B7FF42]/5 text-[#B7FF42] text-xs"
+                    >
+                      {item}
+                    </span>
+                  )
+                )}
+              </div>
+            </motion.div>
+
+            {/* RIGHT CARDS */}
+            <div className="lg:col-span-2 grid gap-6">
+
+              {/* EDUCATION */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="rounded-3xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/30 transition"
               >
-                {item}
-              </span>
-            )
-          )}
-        </div>
-      </motion.div>
+                <div className="flex justify-between items-start mb-7">
+                  <GraduationCap className="text-[#B7FF42]" size={30} />
+                  <span className="text-xs text-gray-500">EDUCATION</span>
+                </div>
 
-      {/* Right Side Cards */}
-      <div className="lg:col-span-2 grid gap-6">
+                <h3 className="text-xl font-bold mb-2">
+                  B.Tech in CSE
+                </h3>
 
-        {/* Education */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="rounded-3xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/30 transition"
-        >
-          <div className="flex justify-between items-start mb-7">
-            <GraduationCap className="text-[#B7FF42]" size={30} />
-            <span className="text-xs text-gray-500">EDUCATION</span>
+                <p className="text-gray-400 text-sm leading-6">
+                  Ideal Institute of Engineering, Kalyani
+                </p>
+
+                <p className="text-gray-500 text-xs mt-3">
+                  MAKAUT, West Bengal
+                </p>
+              </motion.div>
+
+              {/* INTERESTS */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="rounded-3xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/30 transition"
+              >
+                <div className="flex justify-between items-start mb-7">
+                  <BrainCircuit className="text-[#B7FF42]" size={30} />
+                  <span className="text-xs text-gray-500">INTERESTS</span>
+                </div>
+
+                <h3 className="text-xl font-bold mb-3">
+                  Exploring Intelligence
+                </h3>
+
+                <p className="text-gray-400 text-sm leading-7">
+                  Artificial Intelligence, Machine Learning,
+                  Deep Learning, and building intelligent systems.
+                </p>
+              </motion.div>
+
+            </div>
           </div>
 
-          <h3 className="text-xl font-bold mb-2">
-            B.Tech in CSE
-          </h3>
+          {/* HIGHLIGHT CARDS */}
+          <div className="grid sm:grid-cols-2 gap-6 mt-6">
 
-          <p className="text-gray-400 text-sm leading-6">
-            Ideal Institute of Engineering, Kalyani
-          </p>
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="rounded-2xl border border-white/10 bg-[#111511] p-7 flex gap-5 items-center"
+            >
+              <Rocket size={30} className="text-[#B7FF42] shrink-0" />
+              <div>
+                <h4 className="font-bold text-lg">Building Real Projects</h4>
+                <p className="text-gray-500 text-sm mt-1">
+                  Turning concepts into working applications.
+                </p>
+              </div>
+            </motion.div>
 
-          <p className="text-gray-500 text-xs mt-3">
-            MAKAUT, West Bengal
-          </p>
-        </motion.div>
+            <motion.div
+              whileHover={{ y: -5 }}
+              className="rounded-2xl border border-white/10 bg-[#111511] p-7 flex gap-5 items-center"
+            >
+              <Lightbulb size={30} className="text-[#B7FF42] shrink-0" />
+              <div>
+                <h4 className="font-bold text-lg">Always Experimenting</h4>
+                <p className="text-gray-500 text-sm mt-1">
+                  Exploring ideas, technologies and possibilities.
+                </p>
+              </div>
+            </motion.div>
 
-        {/* AI / ML */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="rounded-3xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/30 transition"
-        >
-          <div className="flex justify-between items-start mb-7">
-            <BrainCircuit className="text-[#B7FF42]" size={30} />
-            <span className="text-xs text-gray-500">INTERESTS</span>
+          </div>
+        </div>
+      </section>
+
+      {/* TECHNICAL SKILLS SECTION */}
+      <section
+        id="skills"
+        className="relative z-10 py-28 px-6 md:px-12 border-t border-white/10"
+      >
+        <div className="max-w-7xl mx-auto">
+
+          {/* SKILLS HEADING */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-16"
+          >
+            <p className="text-[#B7FF42] text-sm tracking-[0.3em] font-semibold mb-4">
+              MY TECH STACK
+            </p>
+
+            <h2 className="text-4xl md:text-6xl font-black tracking-tight">
+              Tools of my <span className="text-[#B7FF42]">Trade.</span>
+            </h2>
+
+            <p className="text-gray-400 mt-5 max-w-xl leading-8">
+              Technologies and tools I use to transform ideas
+              into real-world digital experiences.
+            </p>
+          </motion.div>
+
+          {/* SKILLS GRID */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            {skillCategories.map((category, index) => {
+              const Icon = category.icon;
+
+              return (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, y: 35 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.07,
+                  }}
+                  whileHover={{ y: -7 }}
+                  className="group relative rounded-2xl border border-white/10 bg-[#111511] p-6 hover:border-[#B7FF42]/40 hover:bg-[#141A12] transition-all duration-300 overflow-hidden"
+                >
+
+                  {/* HOVER GLOW */}
+                  <div className="absolute top-0 right-0 w-28 h-28 bg-[#B7FF42]/5 blur-3xl opacity-0 group-hover:opacity-100 transition" />
+
+                  {/* ICON */}
+                  <div className="relative z-10 flex items-center justify-between mb-7">
+                    <div className="w-12 h-12 rounded-xl bg-[#B7FF42]/10 flex items-center justify-center text-[#B7FF42] group-hover:bg-[#B7FF42] group-hover:text-black transition duration-300">
+                      <Icon size={23} />
+                    </div>
+
+                    <span className="text-xs text-gray-600 font-mono">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  {/* CATEGORY */}
+                  <h3 className="text-lg font-bold text-white mb-1">
+                    {category.title}
+                  </h3>
+
+                  <p className="text-xs text-gray-500 mb-6">
+                    {category.subtitle}
+                  </p>
+
+                  {/* SKILLS */}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-2 rounded-lg text-xs text-gray-300 bg-white/[0.04] border border-white/[0.06] group-hover:border-[#B7FF42]/20 transition"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* BOTTOM ACCENT */}
+                  <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#B7FF42] group-hover:w-full transition-all duration-500" />
+
+                </motion.div>
+              );
+            })}
+
           </div>
 
-          <h3 className="text-xl font-bold mb-3">
-            Exploring Intelligence
-          </h3>
+          {/* BOTTOM NOTE */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border border-white/10 bg-[#111511] rounded-2xl p-6">
 
-          <p className="text-gray-400 text-sm leading-7">
-            Artificial Intelligence, Machine Learning,
-            Deep Learning, and building intelligent systems.
-          </p>
-        </motion.div>
-      </div>
-    </div>
+            <div>
+              <h3 className="font-semibold text-white">
+                Always learning. Always building.
+              </h3>
 
-    {/* Bottom Highlights */}
-    <div className="grid sm:grid-cols-2 gap-6 mt-6">
+              <p className="text-sm text-gray-500 mt-1">
+                My tech stack evolves with every project.
+              </p>
+            </div>
 
-      <motion.div
-        whileHover={{ y: -5 }}
-        className="rounded-2xl border border-white/10 bg-[#111511] p-7 flex gap-5 items-center"
-      >
-        <Rocket size={30} className="text-[#B7FF42] shrink-0" />
-        <div>
-          <h4 className="font-bold text-lg">Building Real Projects</h4>
-          <p className="text-gray-500 text-sm mt-1">
-            Turning concepts into working applications.
-          </p>
+            <div className="flex items-center gap-2 text-[#B7FF42] text-sm">
+              <span className="w-2 h-2 rounded-full bg-[#B7FF42] animate-pulse" />
+              Growing every day
+            </div>
+
+          </div>
         </div>
-      </motion.div>
+      </section>
 
-      <motion.div
-        whileHover={{ y: -5 }}
-        className="rounded-2xl border border-white/10 bg-[#111511] p-7 flex gap-5 items-center"
-      >
-        <Lightbulb size={30} className="text-[#B7FF42] shrink-0" />
-        <div>
-          <h4 className="font-bold text-lg">Always Experimenting</h4>
-          <p className="text-gray-500 text-sm mt-1">
-            Exploring ideas, technologies and possibilities.
-          </p>
-        </div>
-      </motion.div>
-
-    </div>
-
-  </div>
-</section>
-
-      {/* Expertise Strip */}
+      {/* EXPERTISE STRIP */}
       <section className="relative z-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-7">
 
-          {[
-            ["01", "Full Stack Development"],
-            ["02", "AI / Machine Learning"],
-            ["03", "Problem Solving"],
-            ["04", "Creative Engineering"],
-          ].map(([number, title]) => (
-            <div key={number} className="flex gap-3 items-center">
+          {expertise.map((title, index) => (
+            <div key={title} className="flex gap-3 items-center">
               <span className="text-[#B7FF42] text-sm font-semibold">
-                {number}
+                0{index + 1}
               </span>
+
               <span className="text-gray-400 text-sm">
                 {title}
               </span>
