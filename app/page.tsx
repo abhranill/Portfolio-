@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   Mail,
+  Calendar,
   Code2,
   GraduationCap,
   BrainCircuit,
@@ -729,6 +730,168 @@ export default function Home() {
             More experiments, ideas, and projects are constantly in progress.
             <span className="text-[#B7FF42] ml-2">Stay tuned ↗</span>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ================= DEVELOPER JOURNEY ================= */}
+      <section
+        id="journey"
+        className="relative z-10 py-28 px-6 md:px-12 border-t border-white/10 overflow-hidden"
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#B7FF42]/5 blur-[150px] rounded-full pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-20"
+          >
+            <p className="text-[#B7FF42] text-sm tracking-[0.3em] uppercase mb-4">
+              My Journey
+            </p>
+
+            <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+              Learning.
+              <span className="text-[#B7FF42]"> Building.</span>
+              <br />
+              Growing.
+            </h2>
+
+            <p className="text-gray-400 mt-6 max-w-2xl leading-relaxed">
+              Every project, every challenge and every new technology is a step
+              forward in my journey as a Computer Science student and developer.
+            </p>
+          </motion.div>
+
+          <div className="relative max-w-4xl mx-auto">
+            <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#B7FF42] via-[#B7FF42]/30 to-transparent md:-translate-x-1/2" />
+
+            {/* Timeline 01 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative grid grid-cols-1 md:grid-cols-2 gap-10 mb-16"
+            >
+              <div className="md:text-right md:pr-12 pl-14 md:pl-0">
+                <div className="inline-flex items-center gap-2 text-[#B7FF42] text-sm font-medium mb-3">
+                  <Calendar size={16} />
+                  2025
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">The Beginning</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Started my B.Tech journey in Computer Science and Engineering.
+                  Began exploring programming, computer science fundamentals,
+                  and the endless possibilities of technology.
+                </p>
+                <div className="flex flex-wrap md:justify-end gap-2 mt-5">
+                  {["B.Tech CSE", "Programming", "Computer Science"].map((item) => (
+                    <span key={item} className="px-3 py-1 rounded-full border border-white/10 text-xs text-gray-400">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="hidden md:block md:pl-12" />
+              <div className="absolute left-5 md:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#B7FF42] shadow-[0_0_20px_#B7FF42] z-10" />
+            </motion.div>
+
+            {/* Timeline 02 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative grid grid-cols-1 md:grid-cols-2 gap-10 mb-16"
+            >
+              <div className="hidden md:block md:pr-12" />
+              <div className="md:pl-12 pl-14">
+                <div className="inline-flex items-center gap-2 text-[#B7FF42] text-sm font-medium mb-3">
+                  <Code2 size={16} />
+                  2026
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">From Learning to Building</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Started turning my knowledge into real projects. Exploring
+                  full-stack development, working with modern frameworks, and
+                  learning how to build applications from idea to implementation.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {["React", "Next.js", "Node.js", "TypeScript"].map((item) => (
+                    <span key={item} className="px-3 py-1 rounded-full border border-white/10 text-xs text-gray-400">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="absolute left-5 md:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#B7FF42] shadow-[0_0_20px_#B7FF42] z-10" />
+            </motion.div>
+
+            {/* Timeline 03 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative grid grid-cols-1 md:grid-cols-2 gap-10 mb-16"
+            >
+              <div className="md:text-right md:pr-12 pl-14 md:pl-0">
+                <div className="inline-flex items-center gap-2 text-[#B7FF42] text-sm font-medium mb-3">
+                  <BrainCircuit size={16} />
+                  2026 — Present
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">Exploring AI & Machine Learning</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Deepening my interest in Artificial Intelligence and Machine
+                  Learning while experimenting with models, Python, PyTorch,
+                  and building projects that combine software development with AI.
+                </p>
+                <div className="flex flex-wrap md:justify-end gap-2 mt-5">
+                  {["Python", "Machine Learning", "PyTorch", "AI"].map((item) => (
+                    <span key={item} className="px-3 py-1 rounded-full border border-white/10 text-xs text-gray-400">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="hidden md:block md:pl-12" />
+              <div className="absolute left-5 md:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#B7FF42] shadow-[0_0_20px_#B7FF42] z-10" />
+            </motion.div>
+
+            {/* Timeline 04 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative grid grid-cols-1 md:grid-cols-2 gap-10"
+            >
+              <div className="hidden md:block md:pr-12" />
+              <div className="md:pl-12 pl-14">
+                <div className="inline-flex items-center gap-2 text-[#B7FF42] text-sm font-medium mb-3">
+                  <Rocket size={16} />
+                  The Future
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">Becoming a Better Developer</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  My goal is to keep improving my problem-solving skills,
+                  contribute to meaningful projects, participate in hackathons,
+                  explore open source, and prepare for exciting internship opportunities.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {["DSA", "Open Source", "Hackathons", "Internships"].map((item) => (
+                    <span key={item} className="px-3 py-1 rounded-full border border-[#B7FF42]/20 bg-[#B7FF42]/5 text-xs text-[#B7FF42]">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="absolute left-5 md:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#B7FF42] shadow-[0_0_20px_#B7FF42] z-10" />
+            </motion.div>
+          </div>
         </div>
       </section>
 
