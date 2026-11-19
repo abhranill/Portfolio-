@@ -151,7 +151,7 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#090B09] text-white overflow-hidden">
+    <main id="top" className="relative min-h-screen bg-[#090B09] text-white overflow-hidden">
 
       {/* BACKGROUND EFFECTS */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -911,6 +911,115 @@ export default function Home() {
             </div>
           ))}
 
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section
+        id="contact"
+        className="relative z-10 py-28 px-6 md:px-12 border-t border-white/10 overflow-hidden"
+      >
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B7FF42]/5 blur-[150px] rounded-full pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#B7FF42]/20 bg-[#B7FF42]/5 text-[#B7FF42] text-xs tracking-[0.2em] mb-7">
+              <span className="w-2 h-2 rounded-full bg-[#B7FF42] animate-pulse" />
+              LET'S CONNECT
+            </div>
+
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
+              Have an idea?
+              <br />
+              <span className="text-[#B7FF42]">Let's build it.</span>
+            </h2>
+
+            <p className="text-gray-400 max-w-xl mx-auto mt-6 leading-8">
+              I'm always open to discussing exciting projects, internship opportunities, collaborations,
+              or simply connecting with people who love building things with technology.
+            </p>
+
+            <motion.a
+              href="mailto:YOUR_EMAIL@gmail.com"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="group inline-flex items-center gap-3 mt-10 px-7 py-4 rounded-xl bg-[#B7FF42] text-black font-semibold hover:bg-white transition"
+            >
+              <Mail size={19} />
+              Get in Touch
+              <ArrowUpRight size={19} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
+            </motion.a>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-20">
+            <motion.a
+              href="mailto:YOUR_EMAIL@gmail.com"
+              whileHover={{ y: -5 }}
+              className="group rounded-2xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/40 transition"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <Mail className="text-[#B7FF42]" size={25} />
+                <ArrowUpRight className="text-gray-500 group-hover:text-[#B7FF42] transition" size={18} />
+              </div>
+              <p className="text-xs tracking-widest text-gray-500 mb-2">EMAIL</p>
+              <h3 className="font-semibold text-white break-all">YOUR_EMAIL@gmail.com</h3>
+              <p className="text-sm text-gray-500 mt-3">The best way to reach me.</p>
+            </motion.a>
+
+            <motion.a
+              href="https://github.com/YOUR_USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -5 }}
+              className="group rounded-2xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/40 transition"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <Code2 className="text-[#B7FF42]" size={25} />
+                <ArrowUpRight className="text-gray-500 group-hover:text-[#B7FF42] transition" size={18} />
+              </div>
+              <p className="text-xs tracking-widest text-gray-500 mb-2">GITHUB</p>
+              <h3 className="font-semibold text-white">Explore my repositories</h3>
+              <p className="text-sm text-gray-500 mt-3">Projects, experiments and code.</p>
+            </motion.a>
+
+            <motion.a
+              href="https://linkedin.com/in/YOUR_USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -5 }}
+              className="group rounded-2xl border border-white/10 bg-[#111511] p-7 hover:border-[#B7FF42]/40 transition"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <span className="text-[#B7FF42] font-bold text-2xl">in</span>
+                <ArrowUpRight className="text-gray-500 group-hover:text-[#B7FF42] transition" size={18} />
+              </div>
+              <p className="text-xs tracking-widest text-gray-500 mb-2">LINKEDIN</p>
+              <h3 className="font-semibold text-white">Connect professionally</h3>
+              <p className="text-sm text-gray-500 mt-3">Let's connect and grow together.</p>
+            </motion.a>
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-5">
+            <Link href="/" className="text-xl font-black tracking-tighter">
+              AR<span className="text-[#B7FF42]">.</span>
+            </Link>
+            <p className="text-xs text-gray-500 text-center">
+              © 2026 Abhranil Roy. Built with passion and code.
+            </p>
+            <a
+              href="#top"
+              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#B7FF42] transition"
+            >
+              Back to top <ArrowUpRight size={16} />
+            </a>
+          </div>
         </div>
       </section>
 
