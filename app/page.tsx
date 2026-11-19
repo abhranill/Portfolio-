@@ -84,6 +84,70 @@ const expertise = [
   "Creative Engineering",
 ];
 
+
+const projects = [
+  {
+    number: "01",
+    title: "TinyGPT",
+    category: "AI / MACHINE LEARNING",
+    description:
+      "A mini GPT-style language model built from scratch. Implemented tokenization, attention mechanisms, transformer blocks, training, and text generation using PyTorch.",
+    tech: ["Python", "PyTorch", "Transformer", "CUDA"],
+    github: "https://github.com/YOUR_USERNAME/TinyGPT",
+    demo: "",
+  },
+  {
+    number: "02",
+    title: "DocMorph AI",
+    category: "GENERATIVE AI",
+    description:
+      "An AI-powered document processing application designed to transform, analyze, and interact with documents using intelligent AI workflows.",
+    tech: ["Next.js", "Node.js", "Gemini AI", "API"],
+    github: "https://github.com/YOUR_USERNAME/DocMorph-AI",
+    demo: "",
+  },
+  {
+    number: "03",
+    title: "Smart Expense Tracker",
+    category: "FULL STACK DEVELOPMENT",
+    description:
+      "A smart expense management application that helps users track spending, organize transactions, and gain insights into their financial habits.",
+    tech: ["React", "Vite", "Node.js", "Express"],
+    github: "https://github.com/YOUR_USERNAME/Smart-Expense-Tracker",
+    demo: "",
+  },
+  {
+    number: "04",
+    title: "AI Mental Health Chatbot",
+    category: "AI APPLICATION",
+    description:
+      "An AI-powered conversational application focused on providing supportive interactions through an intelligent chatbot interface.",
+    tech: ["React", "FastAPI", "Gemini", "MongoDB"],
+    github: "https://github.com/YOUR_USERNAME/Mental-Health-Chatbot",
+    demo: "",
+  },
+  {
+    number: "05",
+    title: "CanteenHub",
+    category: "WEB APPLICATION",
+    description:
+      "A modern canteen management and food ordering platform with a responsive interface designed to improve the digital ordering experience.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/YOUR_USERNAME/CanteenHub",
+    demo: "",
+  },
+  {
+    number: "06",
+    title: "Travel with Limon",
+    category: "FREELANCE / CLIENT PROJECT",
+    description:
+      "A travel website showcasing destinations, galleries, travel experiences, customer reviews, and contact options with a modern responsive design.",
+    tech: ["Next.js", "Tailwind CSS", "Shadcn UI", "Next Intl"],
+    github: "",
+    demo: "https://YOUR-DEPLOYED-URL.com",
+  },
+];
+
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#090B09] text-white overflow-hidden">
@@ -534,6 +598,137 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+
+      {/* FEATURED PROJECTS SECTION */}
+      <section
+        id="projects"
+        className="relative z-10 py-28 px-6 md:px-12 border-t border-white/10"
+      >
+        <div className="absolute top-20 right-0 w-96 h-96 bg-[#B7FF42]/5 blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* PROJECTS HEADING */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <span className="w-10 h-[2px] bg-[#B7FF42]" />
+              <span className="text-[#B7FF42] text-xs tracking-[0.3em] font-medium">
+                MY WORK
+              </span>
+            </div>
+
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+              <div>
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+                  Featured <span className="text-[#B7FF42]">Projects.</span>
+                </h2>
+                <p className="text-gray-400 mt-5 max-w-xl leading-relaxed">
+                  Things I have built while exploring technology, solving problems,
+                  and turning ideas into real-world applications.
+                </p>
+              </div>
+              <div className="text-sm text-gray-500 font-mono">
+                06 PROJECTS / SELECTED WORK
+              </div>
+            </div>
+          </motion.div>
+
+          {/* PROJECT GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.number}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="group relative rounded-2xl border border-white/10 bg-[#111111] overflow-hidden transition-all duration-300 hover:border-[#B7FF42]/40"
+              >
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#B7FF42]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="p-7 md:p-9">
+                  <div className="flex items-center justify-between mb-8 gap-3">
+                    <span className="font-mono text-sm text-gray-600">
+                      /{project.number}
+                    </span>
+                    <span className="text-[10px] md:text-xs tracking-[0.15em] text-gray-500 border border-white/10 rounded-full px-3 py-1">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-[#B7FF42] transition-colors duration-300">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-400 leading-relaxed text-sm md:text-base min-h-[90px]">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-7">
+                    {project.tech.map((technology) => (
+                      <span
+                        key={technology}
+                        className="text-xs text-gray-300 px-3 py-1.5 rounded-md bg-white/[0.04] border border-white/[0.06]"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between mt-9 pt-6 border-t border-white/[0.06]">
+                    <div className="flex gap-4">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#B7FF42] transition-colors"
+                        >
+                          <Code2 size={16} />
+                          <span>Source</span>
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#B7FF42] transition-colors"
+                        >
+                          <ArrowUpRight size={16} />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
+                    </div>
+                    <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#B7FF42] group-hover:bg-[#B7FF42] transition-all duration-300">
+                      <ArrowUpRight
+                        size={18}
+                        className="text-gray-400 group-hover:text-black transition-colors"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center text-sm text-gray-500"
+          >
+            More experiments, ideas, and projects are constantly in progress.
+            <span className="text-[#B7FF42] ml-2">Stay tuned ↗</span>
+          </motion.div>
         </div>
       </section>
 
