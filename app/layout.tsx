@@ -2,9 +2,67 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Abhranil Roy | Developer Portfolio",
+  metadataBase: new URL("https://your-portfolio-domain.com"),
+
+  title: {
+    default: "Abhranil Roy | Full Stack Developer & AI/ML Enthusiast",
+    template: "%s | Abhranil Roy",
+  },
+
   description:
-    "Personal portfolio of Abhranil Roy — Full Stack Developer and AI/ML Enthusiast.",
+    "Abhranil Roy is a Computer Science Engineering student, Full Stack Developer, and AI/ML enthusiast passionate about building modern web applications and intelligent systems.",
+
+  keywords: [
+    "Abhranil Roy",
+    "Developer Portfolio",
+    "Full Stack Developer",
+    "Web Developer",
+    "Computer Science Engineering",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Python",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "AI Developer",
+    "Software Developer",
+  ],
+
+  authors: [{ name: "Abhranil Roy" }],
+  creator: "Abhranil Roy",
+  publisher: "Abhranil Roy",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    title: "Abhranil Roy | Full Stack Developer & AI/ML Enthusiast",
+    description:
+      "Explore the portfolio, projects, skills, and developer journey of Abhranil Roy.",
+    siteName: "Abhranil Roy Portfolio",
+    url: "https://your-portfolio-domain.com",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Abhranil Roy | Developer Portfolio",
+    description:
+      "Full Stack Developer, Computer Science Engineering student, and AI/ML enthusiast building meaningful digital experiences.",
+  },
+
+  category: "technology",
 };
 
 export default function RootLayout({
