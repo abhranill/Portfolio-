@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-portfolio-domain.com"),
+  metadataBase: new URL("https://abhranil-roy-portfolio.vercel.app"),
 
   title: {
     default: "Abhranil Roy | Full Stack Developer & AI/ML Enthusiast",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description:
       "Explore the portfolio, projects, skills, and developer journey of Abhranil Roy.",
     siteName: "Abhranil Roy Portfolio",
-    url: "https://your-portfolio-domain.com",
+    url: "https://abhranil-roy-portfolio.vercel.app",
     images: [
       {
         url: "/og-image.png",
