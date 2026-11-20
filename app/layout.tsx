@@ -53,6 +53,14 @@ export const metadata: Metadata = {
       "Explore the portfolio, projects, skills, and developer journey of Abhranil Roy.",
     siteName: "Abhranil Roy Portfolio",
     url: "https://your-portfolio-domain.com",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1672,
+        height: 941,
+        alt: "Abhranil Roy — Full Stack Developer and AI/ML Enthusiast",
+      },
+    ],
   },
 
   twitter: {
@@ -60,6 +68,7 @@ export const metadata: Metadata = {
     title: "Abhranil Roy | Developer Portfolio",
     description:
       "Full Stack Developer, Computer Science Engineering student, and AI/ML enthusiast building meaningful digital experiences.",
+    images: ["/og-image.png"],
   },
 
   category: "technology",
